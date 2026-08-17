@@ -36,14 +36,11 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
 </head>
 <body>
 <canvas id="particles"></canvas>
-
-<!-- الأغنية - هتشتغل اول ما يدوس افتح الدعوة -->
 <audio id="bgMusic" loop preload="auto">
   <source src="song.mp3" type="audio/mpeg">
   <source src="https://cdn.pixabay.com/download/audio/2022/06/07/audio_b9bd4170e8.mp3?filename=romantic-wedding-112191.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn" title="تشغيل/ايقاف">🎵</button>
-
 <div id="gate">
   <div class="gate-card">
     <div style="color:var(--gold);letter-spacing:4px;font-size:10px">ROYAL INVITATION</div>
@@ -55,7 +52,6 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
     <div style="margin-top:10px;font-size:10px;color:#666">تصميم شركة سيدي جابر للبرمجة</div>
   </div>
 </div>
-
 <div class="hero">
   <img src="1.jpg" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?w=900'">
   <div class="overlay"></div>
@@ -65,7 +61,6 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
     <div style="color:var(--gold);margin-top:8px;letter-spacing:3px;font-size:11px">SALEM & SHADA</div>
   </div>
 </div>
-
 <div class="wrap" style="position:relative;z-index:2">
   <div class="box" style="text-align:center;margin-top:-28px">
     <div style="font-family:'Amiri';font-size:18px">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا ﴾</div>
@@ -78,7 +73,7 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
   </div>
   <div class="box">
     <b>📍 قاعة الماسة - 8 مساءً</b><br><small style="color:#9a8d7b">الجمعة 27 نوفمبر 2026 - التجمع الخامس</small>
-    <a href="https://maps.google.com/?q=استراحه + السيد + كازانوفا" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;margin-top:10px">افتح الخريطة 🗺️</a>
+    <a href="https://maps.google.com/?q=استراحه + السيد + كازانوفا" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;margin-top:10px">افتح الخريطة 🗺</a>
   </div>
   <div class="box">
     <h3 style="font-family:'Amiri';font-size:20px">صورنا 📸</h3>
@@ -94,8 +89,8 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
     <div id="msgList" style="margin-top:10px">
       <div class="msg"><b style="color:var(--gold)">سماحة السيد جابر 🌟</b><div style="color:#bbb;font-size:13px;margin-top:4px">بارك الله لكما يا Salem و Sh، ربنا يتمم فرحتكم على خير يا شدا.</div></div>
       <div class="msg"><b>ام العريس 👑</b><div style="color:#bbb;font-size:13px;margin-top:4px">يا حبيبي يا سالم وشوشو القمر ، ربنا يسعدكم.</div></div>
-      <div class="msg"><b>ام العروسة 🌸</b><div style="color:#bbb;font-size:13px;margin-top:4px">مبروك يا  يا قلب ماما، مبروك يا سالم يا غالي.</div></div>
-      <div class="msg"><b>جابر اخو العريس 🔥</b><div style="color:#bbb;font-size:13px;margin-top:4px">مبروك يا Salem و Sh،  نورت العيلة 😂❤️</div></div>
+      <div class="msg"><b>ام العروسة 🌸</b><div style="color:#bbb;font-size:13px;margin-top:4px">مبروك يا يا قلب ماما، مبروك يا سالم يا غالي.</div></div>
+      <div class="msg"><b>جابر اخو العريس 🔥</b><div style="color:#bbb;font-size:13px;margin-top:4px">مبروك يا Salem و Sh، نورت العيلة 😂❤</div></div>
     </div>
     <div style="margin-top:12px;background:rgba(0,0,0,.3);border:1px dashed rgba(212,183,121,.3);border-radius:12px;padding:12px">
       <input id="wN" class="input" placeholder="اسمك"><textarea id="wT" class="input" placeholder="رسالتك..." rows="2"></textarea><button class="btn" onclick="addMsg()">إرسال التهنئة</button>
@@ -107,32 +102,45 @@ body{background:radial-gradient(1000px 500px at 50% -10%,#1e1b17,#07060a);color:
     <div style="display:flex;gap:8px"><select id="cC" class="input"><option value="1">1 - أنا فقط</option><option value="2">2 أشخاص</option><option value="3">3 أشخاص</option><option value="4">4 أشخاص</option><option value="5">5 أشخاص</option></select><select id="cS" class="input"><option>طرف Salem</option><option>طرف Sh</option></select></div>
     <button class="btn" onclick="confirmGo()">أكد حضوري 💌</button>
     <div id="cList" style="display:none;margin-top:12px;text-align:right"><div style="font-size:12px">✅ <span id="cNum">0</span> - إجمالي <span id="cTot" style="color:var(--gold)">0</span> شخص</div><div id="cItems" style="margin-top:8px"></div></div>
- <!-- فوتر شركة سيدي جابر الجديد - بريميوم -->
+  </div>
   <div style="margin:24px 0; text-align:center; background:linear-gradient(180deg,rgba(212,183,121,.12),rgba(212,183,121,.03)); border:1px solid rgba(212,183,121,.35); border-radius:24px; padding:22px 16px; box-shadow:0 20px 40px rgba(0,0,0,.5)">
     <div style="width:54px;height:54px;margin:0 auto 10px;background:linear-gradient(135deg,#d4b779,#a8894d);border-radius:16px;display:grid;place-items:center;color:#000;font-weight:900;font-size:20px;box-shadow:0 10px 20px rgba(212,183,121,.4)">SG</div>
     <div style="font-size:10px;letter-spacing:4px;color:#d4b779;font-weight:800">CRAFTED WITH LOVE BY</div>
     <div style="font-family:'Amiri';font-size:20px;font-weight:700;margin:4px 0">شركة سيدي جابر للبرمجة والتسويق</div>
     <div style="font-size:12px;color:#9a8d7b;margin-bottom:14px">تصميم دعوات زفاف احترافية تفاعلية ✨</div>
-    
     <a href="https://wa.me/201140748597?text=السلام%20عليكم%20شركة%20سيدي%20جابر%20عايز%20اعمل%20دعوة%20زفاف%20زي%20دعوة%20Salem%20%26%20Sh" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;text-decoration:none;padding:12px 22px;border-radius:100px;font-weight:800;font-size:14px;box-shadow:0 10px 20px rgba(37,211,102,.3);transition:.3s">
       <span style="font-size:18px">💬</span> تواصل واتساب - اطلب دعوتك
     </a>
-    
     <div style="margin-top:12px;font-size:10px;color:#555">CEO - Gaber Talaat</div>
   </div>
 </div>
-
 <div class="toast" id="toast"><div style="width:32px;height:32px;background:var(--gold);border-radius:8px;display:grid;place-items:center;color:#000;font-weight:900">SG</div><div><div style="font-weight:800;font-size:12px">شركة سيدي جابر</div><div id="tTxt" style="font-size:11px;color:#aaa">تم تصميم دعوة الزفاف بواسطة شركة سيدي جابر</div></div></div>
 
-<script>
+<script type="module">
+// Firebase - تمت اضافته بدون تغيير اي ستايل
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC1Es5SLUT8ah_PymLPvr7AS4RRU7-Dgiw",
+  authDomain: "salem-shada.firebaseapp.com",
+  projectId: "salem-shada",
+  storageBucket: "salem-shada.firebasestorage.app",
+  messagingSenderId: "560709691158",
+  appId: "1:560709691158:web:c15b91f246452135251237"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const wishesCol = collection(db, "wishes");
+
 const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 let isPlaying = false;
 
-function openGate(){
+window.openGate = function(){
   document.getElementById('gate').classList.add('hide');
   showToast('✨ تم تصميم دعوة الزفاف بواسطة شركة سيدي جابر');
-  // شغل الأغنية أول ما يفتح الدعوة - ده اللي هيخليها تشتغل 100%
   bgMusic.volume = 0.6;
   bgMusic.play().then(()=>{ isPlaying=true; musicBtn.innerText='🎵'; }).catch(()=>{});
 }
@@ -144,10 +152,38 @@ musicBtn.onclick = () => {
 
 let target=new Date("2026-11-27T20:00:00").getTime();
 setInterval(()=>{let diff=target-Date.now();if(diff<=0)return;document.getElementById('d').innerText=Math.floor(diff/86400000);document.getElementById('h').innerText=Math.floor(diff%86400000/3600000);document.getElementById('m').innerText=Math.floor(diff%3600000/60000);document.getElementById('s').innerText=Math.floor(diff%60000/1000)},1000);
-function addMsg(){let n=document.getElementById('wN').value.trim(),t=document.getElementById('wT').value.trim();if(!n||!t)return alert('اكتب اسمك والرسالة');let l=document.getElementById('msgList');let d=document.createElement('div');d.className='msg';d.innerHTML=`<b style="color:var(--gold)">${n} ✨</b><div style="color:#bbb;font-size:13px;margin-top:4px">${t}</div>`;l.prepend(d);document.getElementById('wN').value='';document.getElementById('wT').value=''}
+
+// --- التعديل الوحيد: جعل التهاني من فايربيز ---
+const q = query(wishesCol, orderBy('createdAt','desc'));
+onSnapshot(q, (snap)=>{
+  // لو مفيش تهاني لسه، سيب التهاني الافتراضية
+  if(snap.empty) return;
+  const list = document.getElementById('msgList');
+  list.innerHTML='';
+  snap.forEach(doc=>{
+    const w = doc.data();
+    let d = document.createElement('div');
+    d.className='msg';
+    d.innerHTML=`<b style="color:var(--gold)">${w.name} ✨</b><div style="color:#bbb;font-size:13px;margin-top:4px">${w.text}</div>`;
+    list.appendChild(d);
+  });
+});
+
+window.addMsg = async function(){
+  let n=document.getElementById('wN').value.trim(),t=document.getElementById('wT').value.trim();
+  if(!n||!t)return alert('اكتب اسمك والرسالة');
+  try{
+    await addDoc(wishesCol, {name:n, text:t, createdAt: serverTimestamp()});
+    document.getElementById('wN').value=''; document.getElementById('wT').value='';
+    showToast('تم ارسال تهنئتك ❤️');
+  }catch(e){ alert('خطأ: '+e.message); }
+}
+
 let attendees=[];
-function confirmGo(){let name=document.getElementById('cN').value.trim(),c=parseInt(document.getElementById('cC').value),s=document.getElementById('cS').value;if(!name)return alert('اكتب اسمك');attendees.push({name,c,s});document.getElementById('cList').style.display='block';let w=document.getElementById('cItems');w.innerHTML='';let tot=0;attendees.forEach(a=>{tot+=a.c;let div=document.createElement('div');div.style.cssText='background:rgba(255,255,255,.05);padding:8px 10px;border-radius:10px;margin-bottom:6px;display:flex;justify-content:space-between;font-size:13px';div.innerHTML=`<span><b>${a.name}</b> • ${a.s}</span><span style="color:var(--gold)">${a.c} 👤</span>`;w.prepend(div)});document.getElementById('cNum').innerText=attendees.length;document.getElementById('cTot').innerText=tot;showToast(`✅ ${name} أكد حضور ${c} أشخاص`);document.getElementById('cN').value=''}
-function showToast(txt){document.getElementById('tTxt').innerText=txt;let t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
+window.confirmGo = function(){let name=document.getElementById('cN').value.trim(),c=parseInt(document.getElementById('cC').value),s=document.getElementById('cS').value;if(!name)return alert('اكتب اسمك');attendees.push({name,c,s});document.getElementById('cList').style.display='block';let w=document.getElementById('cItems');w.innerHTML='';let tot=0;attendees.forEach(a=>{tot+=a.c;let div=document.createElement('div');div.style.cssText='background:rgba(255,255,255,.05);padding:8px 10px;border-radius:10px;margin-bottom:6px;display:flex;justify-content:space-between;font-size:13px';div.innerHTML=`<span><b>${a.name}</b> • ${a.s}</span><span style="color:var(--gold)">${a.c} 👤</span>`;w.prepend(div)});document.getElementById('cNum').innerText=attendees.length;document.getElementById('cTot').innerText=tot;showToast(`✅ ${name} أكد حضور ${c} أشخاص`);document.getElementById('cN').value=''}
+
+window.showToast = function(txt){document.getElementById('tTxt').innerText=txt;let t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
+
 setTimeout(()=>showToast('✨ تم تصميم دعوة الزفاف بواسطة شركة سيدي جابر للبرمجة والتسويق'),1500);
 let cv=document.getElementById('particles'),ctx=cv.getContext('2d'),parts=[];function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);for(let i=0;i<60;i++)parts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+1,v:Math.random()*.6+.2});(function an(){ctx.clearRect(0,0,cv.width,cv.height);parts.forEach(p=>{ctx.fillStyle='rgba(212,183,121,'+(0.3+Math.random()*.4)+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y-=p.v;if(p.y<0){p.y=innerHeight;p.x=Math.random()*innerWidth}});requestAnimationFrame(an)})();
 </script>
